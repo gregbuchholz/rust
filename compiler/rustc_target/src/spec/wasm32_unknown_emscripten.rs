@@ -36,6 +36,8 @@ pub fn target() -> Target {
         linker: None,
         is_like_emscripten: true,
         panic_strategy: PanicStrategy::Unwind,
+        //singlethread is true in wasm_base, but let's try it to see what happens on emscripten
+        singlethread: false,
         post_link_args,
         families: vec!["unix".to_string(), "wasm".to_string()],
         ..options
